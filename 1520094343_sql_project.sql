@@ -102,7 +102,7 @@ FROM Members
 INNER JOIN (
 
 /* Select member with most recent join dat. Use memid to exclude guest entries. */
-SELECT MIN(joindate) as recent_date
+SELECT MAX(joindate) as recent_date
 FROM Members
 WHERE memid > 0
 ) AS recentdate
